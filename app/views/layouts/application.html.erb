@@ -11,20 +11,15 @@
   <body>
 
     <header class="navbar navbar-inverse">
-      <div class="navbar-class">
-        <div class="container">
-          <h1>The Sneaker Index</h1>
-          <ul class="navbar-nav">
-            <% if current_user %>
-              <li><%= link_to "Dashboard", user_path(current_user) %></li>
-              <li><%= link_to "Log Out", logout_path, method: :delete%></li>
-            <% else %>
-              <li><%= link_to "Log In", login_path %></li>
-              <li><%= link_to "Sign Up", new_user_path %></li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
+      <h1>The Sneaker Index</h1>
+      <nav>
+        <% if current_user %>
+          <li><%= link_to "Dashboard", user_path(current_user) %></li>
+          <li><%= link_to "Log Out", logout_path, method: :delete%></li>
+        <% else %>
+          <%= render 'sessions/new' %>
+        <% end %>
+      </nav>
     </header>
 
     <%= yield %>
