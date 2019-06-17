@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  require 'pry'
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def show
