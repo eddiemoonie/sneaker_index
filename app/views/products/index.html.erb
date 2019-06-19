@@ -1,1 +1,16 @@
+<h1>Products</h1>
 
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="column">
+      <div class="image-container">
+        <div class="img">
+          <%= image_tag product.image.url(:preview) if product.image.exists? %>
+        </div>
+      </div>
+      <p><%= link_to "#{product.name}", product_path(product) %></p>
+      <p><%= product.size %></p>
+      <p><%= number_to_currency(product.price, :unit => "$") %></p>
+    </div>
+  <% end %>
+</div>

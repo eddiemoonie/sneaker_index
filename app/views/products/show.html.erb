@@ -1,4 +1,37 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @product.name %></h1>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<div class="product-col-left">
+  <div class="image-container">
+    <div class="img">
+      <%= image_tag @product.image.url(:large) if @product.image.exists? %>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="prod-head">
+    <h2>Product Details</h2>
+  </div>
+
+
+  <div class="product">
+    <div class="prod-specs">
+      <h4>Product Specs</h4>
+    </div>
+    <div class="prod-description">
+      <h4>Description</h4>
+    </div>
+  </div>
+
+  <div class="product">
+    <div class="prod-specs">
+      <label for="">Price: </label><strong><%= number_to_currency(@product.price, :unit => "$") %></strong><br>
+      <label for="">Size: </label><strong><%= @product.size %></strong><br>
+      <label for="">Condition: </label><strong><%= @product.condition %></strong>
+    </div>
+
+    <div class="prod-description">
+      <p><%= @product.description %></p>
+    </div>
+  </div>
+</div>
