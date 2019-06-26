@@ -11,8 +11,6 @@ class CartItemsController < ApplicationController
       @cart_item.product = chosen_product
     end
 
-    binding.pry
-
     @cart_item.save
     redirect_to cart_path(current_cart)
   end

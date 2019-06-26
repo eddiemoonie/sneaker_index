@@ -11,7 +11,7 @@
       <p><%= link_to "#{product.name}", product_path(product) %></p>
       <p><%= product.size %></p>
       <p><%= number_to_currency(product.price, :unit => "$") %></p>
-      <p><%= link_to "Add to Cart", cart_items_path(:product_id => product.id) %></p>
+      <p><%= button_to "Add to Cart", cart_items_path(:product_id => product.id) %></p>
     </div>
   <% end %>
 </div>
