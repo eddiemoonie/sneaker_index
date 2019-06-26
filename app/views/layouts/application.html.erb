@@ -14,8 +14,11 @@
       <h1>The Sneaker Index</h1>
       <nav>
         <% if current_user %>
+          <%= link_to "Marketplace", products_path %>
           <%= link_to "Dashboard", user_path(current_user) %>
-          <%= link_to "Log Out", logout_path, method: :delete%>
+          <%= link_to "Sell", new_product_path %>
+          <%= link_to "Cart", cart_path(@current_cart) %>
+          <%= link_to "Log Out", logout_path, method: :delete %>
         <% else %>
           <%= render :partial => 'sessions/new', :locals => { :user => @user } %>
         <% end %>
