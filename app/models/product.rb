@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :user
+  has_many :cart_items
 
   has_attached_file :image, :styles => {
       :thumb    => ['100x100>',  :jpg, :quality => 70],

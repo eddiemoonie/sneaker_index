@@ -1,0 +1,4 @@
+<%= current_user.username %>
+<% @cart.cart_items.each do |cart_item| %>
+  <%= cart_item.product.name %>
+<% end %>
