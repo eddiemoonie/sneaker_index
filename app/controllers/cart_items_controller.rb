@@ -15,6 +15,12 @@ class CartItemsController < ApplicationController
     redirect_to cart_path(current_cart)
   end
 
+  def destroy
+    @cart_item = CartItem.find(params[:id])
+    @cart_item.destroy
+    redirect_to cart_path(@current_cart)
+  end
+
   def cart_item_params
     params.require(:cart_item).permit(
       :product_id,
