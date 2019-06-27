@@ -12,3 +12,6 @@
 <div class="subtotal">
   <p>Subtotal: <%= @cart.subtotal %></p>
 </div>
+<div class="checkout">
+  <button><%= link_to "Checkout", new_order_path %></button>
+</div>

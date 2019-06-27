@@ -1,0 +1,18 @@
+<h1>Order Form</h1>
+
+<h3>Shipping Address</h3>
+
+<%= form_for :shipping_information, :url => url_for(:controller => "shipping_informations", :action => "create")  do |f| %>
+  <%= f.text_field :first_name , :placeholder => "First Name" %>
+  <%= f.text_field :last_name, :placeholder => "Last Name" %>
+  <br>
+  <%= f.text_field :street_address, :placeholder => "Street Address" %>
+  <%= f.text_field :city, :placeholder => "City" %>
+  <br>
+  <%= f.text_field :state, :placeholder => "State" %>
+  <%= f.text_field :zipcode, :placeholder => "Zip Code" %>
+<% end %>
+
+<h3>Payment Information</h3>
+
+<h3>Billing Address</h3>

@@ -21,10 +21,12 @@ class CartItemsController < ApplicationController
     redirect_to cart_path(@current_cart)
   end
 
+  private
+
   def cart_item_params
     params.require(:cart_item).permit(
       :product_id,
-      :cart_id,
+      :cart_id
     )
   end
 end
