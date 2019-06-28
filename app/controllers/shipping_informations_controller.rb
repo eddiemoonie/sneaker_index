@@ -4,6 +4,7 @@ class ShippingInformationsController < ApplicationController
   end
 
   def create
+    binding.pry
     @shipping_info = ShippingInformation.new(shipping_params)
     @shipping_info.save
   end

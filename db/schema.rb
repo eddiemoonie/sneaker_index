@@ -26,9 +26,7 @@ ActiveRecord::Schema.define(version: 2019_06_27_185405) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.text "address"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -51,10 +49,12 @@ ActiveRecord::Schema.define(version: 2019_06_27_185405) do
   create_table "shipping_informations", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+    t.string "email"
     t.string "street_address"
     t.string "city"
     t.integer "zip_code"
     t.string "state"
+    t.integer "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
