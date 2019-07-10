@@ -1,3 +1,6 @@
 <h1>Orders#show</h1>
 <p>Find me in app/views/orders/show.html.erb</p>
 <%= @order.inspect %>
+<% @order.cart_items.each do |cart_item| %>
+  <%= cart_item %>
+<% end %>

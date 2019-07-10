@@ -19,11 +19,13 @@ class OrdersController < ApplicationController
       @order.cart_items << item
       item.cart_id = nil
     end
-    binding.pry
     @order.save
     Cart.destroy(session[:cart_id])
     session[:cart_id] = nil
-    # redirect_to root_path
+    @order.cart_items.each do |cart_item|
+      cart_item.product.sold = true
+      cart_item.product.save
+    end
     redirect_to order_path(@order)
   end
 
@@ -33,6 +35,7 @@ class OrdersController < ApplicationController
         :shipping_information_attributes => [
           :first_name,
           :last_name,
+          :email,
           :street_address,
           :city,
           :state,
