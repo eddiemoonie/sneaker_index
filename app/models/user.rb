@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :products
   has_many :orders
   has_many :shipping_informations, :through => :orders
+  has_many :payment_informations, :through => :orders
 
   validates :username, presence: true
   validates :first_name, presence: true

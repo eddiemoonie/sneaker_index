@@ -16,5 +16,24 @@
     <%= s.number_field :zip_code, :placeholder => "Zip Code" %>
   <% end %>
 
+  <h3>Payment Details</h3>
+
+  <%= f.fields_for :payment_information do |s| %>
+    <%= s.text_field :card_number, :placeholder => "Card Number" %>
+    <%= s.text_field :full_name, :placeholder => "Name on Card" %>
+    <br>
+    <%= s.select :exp_month, options_for_select((01..12).step(1)), :prompt => "MM" %>
+    <%= s.select :exp_year, options_for_select((Date.current.year..2030).step(1)), :prompt => "YY" %>
+    <%= s.text_field :ccv, :placeholder => "CCV" %>
+    <br>
+    <h3>Billing Address</h3>
+    <%= s.text_field :street_address, :placeholder => "Street Address" %>
+    <%= s.text_field :city, :placeholder => "City" %>
+    <br>
+    <%= s.text_field :state, :placeholder => "State" %>
+    <%= s.number_field :zip_code, :placeholder => "Zip Code" %>
+
+  <% end %>
+  <br><br>
   <%= f.submit "Place Order" %>
 <% end %>

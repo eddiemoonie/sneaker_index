@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
     @order.build_shipping_information
+    @order.build_payment_information
   end
 
   def create
@@ -36,6 +37,17 @@ class OrdersController < ApplicationController
           :first_name,
           :last_name,
           :email,
+          :street_address,
+          :city,
+          :state,
+          :zip_code
+        ],
+        :payment_information_attributes => [
+          :card_number,
+          :exp_month,
+          :exp_year,
+          :ccv,
+          :full_name,
           :street_address,
           :city,
           :state,
