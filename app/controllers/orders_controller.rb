@@ -9,6 +9,7 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
+    @order.build_shipping_information
   end
 
   def create
@@ -28,10 +29,8 @@ class OrdersController < ApplicationController
 
   private
     def order_params
-      binding.pry
       params.require(:order).permit(
-        :user_id,
-        :shipping_information => [
+        :shipping_information_attributes => [
           :first_name,
           :last_name,
           :street_address,
@@ -41,5 +40,4 @@ class OrdersController < ApplicationController
         ]
       )
     end
-
 end
