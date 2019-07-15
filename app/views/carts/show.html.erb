@@ -9,9 +9,15 @@
     </div>
   </div>
 <% end %>
-<div class="subtotal">
-  <p>Subtotal: <%= @cart.subtotal %></p>
-</div>
-<div class="checkout">
-  <button><%= link_to "Checkout", new_order_path %></button>
-</div>
+<% if @cart.cart_items.present? %>
+  <div class="subtotal">
+    <p>Subtotal: <%= @cart.subtotal %></p>
+  </div>
+  <div class="checkout">
+    <button><%= link_to "Checkout", new_order_path %></button>
+  </div>
+<% else %>
+  <div class="">
+    <h3>Your Shopping Cart is Empty</h3>
+  </div>
+<% end %>
