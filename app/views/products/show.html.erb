@@ -33,12 +33,6 @@
     <div class="prod-description">
       <p><%= @product.description %></p>
     </div>
-
-    <% if !@product.sold %>
-      <div class="">
-        <p><%=  button_to "Add to Cart", cart_items_path(:product_id => @product.id) %></p>
-      </div>
-    <% end %>
   </div>
 </div>
 
@@ -60,4 +54,10 @@
       <% end %>
     </ul>
   </div>
+
+  <% if !@product.sold %>
+    <div class="buttons">
+      <p><%=  button_to "Add to Cart", cart_items_path(:product_id => @product.id) %></p>
+    </div>
+  <% end %>
 </div>

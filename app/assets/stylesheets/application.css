@@ -14,10 +14,162 @@
  *= require_self
  */
 
-header {
+/* header {
   text-align: center;
 }
 
 nav {
   float: right;
+} */
+
+body {
+  font-family: proxima-nova,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+
+/* Navbar and header */
+header {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid rgb(206, 206, 206);
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+h1 {
+  display: flex;
+  justify-content: space-around;
+}
+
+h2 {
+  margin: auto;
+}
+
+h3 {
+  text-align: center;
+}
+
+h4 {
+  margin: auto;
+}
+
+.navbar-nav{
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-nav li {
+  font-size: 18px;
+  color: black;
+  margin: 0px 15px;
+  padding: 16px 0px 4px;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+form {
+  margin: 0 auto;
+  width: 130px;
+}
+
+.form-container {
+  margin: 0 auto;
+  margin-top:10px;
+  width: 25%;
+  border: 2px solid grey;
+}
+
+/* User Show Page */
+.column-left{ display: inline-block; width: 33%; padding: 10px; vertical-align: top;}
+.column-right{ display: inline-block; width: 33%; padding: 10px; vertical-align: top;}
+.column-center{ display: inline-block; width: 33%; padding: 10px; vertical-align: top;}
+
+/* Product Show */
+.product-col-left {
+  display: inline-block;
+  width: 66%;
+  padding: 10px;
+  vertical-align: top;
+}
+
+.product-col-right {
+  display: inline-block;
+  width: 33%;
+  padding: 10px;
+  vertical-align: top;
+}
+
+.prod-head {
+  border-style: ridge;
+  display: flex;
+}
+
+.product {
+  display: flex;
+}
+
+.prod-specs {
+  display: inline-block;
+  width: 33%;
+  padding: 10px;
+  border-style: ridge;
+  text-align: center;
+}
+
+.prod-description {
+  display: inline-block;
+  width: 67%;
+  padding: 10px;
+  border-style: ridge;
+  text-align: center;
+}
+
+.seller-info-head {
+  border-style: ridge;
+  display: flex;
+}
+
+.seller-info {
+  padding: 10px;
+  border-style: ridge;
+  text-align: center;
+}
+
+.buttons {
+  text-align: center;
+}
+
+/* Products Index */
+.column {
+  display: inline-block;
+  width: 33%;
+  padding: 10px;
+}
+
+.image-container {
+  border-style: ridge;
+  display: flex;
+}
+
+.img {
+  display: block;
+  margin: auto;
+}
+
+.row {
+  /* border: 2px solid grey; */
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }

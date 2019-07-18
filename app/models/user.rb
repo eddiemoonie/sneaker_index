@@ -23,6 +23,10 @@ class User < ApplicationRecord
         count += 1
       end
     end
-    sum/count
+    if count = 0
+      return ""
+    else
+      sum/count
+    end
   end
 end
