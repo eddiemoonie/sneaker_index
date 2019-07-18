@@ -4,7 +4,7 @@ Show <%= @user.username %>
     <div class="image-container">
       <div class="img">
         <%= image_tag product.image.url(:thumb) if product.image.exists? %>
-        <%= product.name %>
+        <%= link_to "#{product.name}", product_path(product) %>
         <%= product.price %>
         <br>
         Seller: <%= link_to "#{product.user.username}", user_path(product.user) %>
