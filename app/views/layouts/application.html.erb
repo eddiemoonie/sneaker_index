@@ -11,7 +11,7 @@
   <body>
 
     <header class="navbar navbar-inverse">
-      <h1>The Sneaker Index</h1>
+      <h1><%= link_to "The Sneaker Index", root_path %></h1>
       <nav>
         <% if current_user %>
           <%= link_to "Marketplace", products_path %>
