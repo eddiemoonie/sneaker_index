@@ -39,3 +39,23 @@
     </div>
   </div>
 </div>
+
+<div class="product-col-right">
+  <div class="seller-info-head">
+    <h2>Seller Information</h2>
+  </div>
+
+<!-- Need to fix this -->
+<div class="seller-info">
+    <label for="">Seller: </label><%= link_to "#{@product.user.username}", user_path(@product.user) %><br>
+    <label for="">Rating: </label><strong><%= @user.average_rating %></strong><br><br>
+
+    <h4>Seller Reviews</h4>
+    <ul>
+      <% @user.products.each do |product| %>
+        <% if product.review %>
+          <li>"<%= product.review.post %>" -<%= product.review.user.username %></li>
+        <% end %>
+      <% end %>
+    </ul>
+</div>

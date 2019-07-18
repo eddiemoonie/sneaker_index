@@ -1,1 +1,15 @@
 Show <%= @user.username %>
+<% @user.orders.each do |order| %>
+  <% order.products.each do |product| %>
+    <div class="image-container">
+      <div class="img">
+        <%= image_tag product.image.url(:thumb) if product.image.exists? %>
+        <%= product.name %>
+        <%= product.price %>
+        <br>
+        Seller: <%= link_to "#{product.user.username}", user_path(product.user) %>
+          <%= link_to "(Leave a Review)", new_review_path(:product_id => product.id) if @user === current_user && !product.review %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
