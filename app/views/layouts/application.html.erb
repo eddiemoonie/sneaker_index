@@ -16,6 +16,7 @@
         <% if current_user %>
           <%= link_to "Marketplace", products_path %>
           <%= link_to "Account", user_path(current_user) %>
+          <%= link_to "Favorites", "/favorites" %>
           <%= link_to "Sell", new_product_path %>
           <%= link_to "Cart", cart_path(@current_cart) %>
           <%= link_to "Log Out", logout_path, method: :delete %>

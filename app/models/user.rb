@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
 
+  has_one :favorites_list
   has_many :products
   has_many :orders
   has_many :reviews
