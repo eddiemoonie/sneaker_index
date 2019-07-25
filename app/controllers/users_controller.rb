@@ -15,9 +15,10 @@ class UsersController < ApplicationController
       @favorites_list.user_id = @user.id
       @favorites_list.save
       session[:user_id] = @user.id
-      redirect_to user_path(@user)
+      # redirect_to user_path(@user)
+      redirect_to root_path
     else
-      redirect_to new_user_path
+      redirect_to signup_path
     end
   end
 
