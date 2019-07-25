@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   resources :users, only: [:show, :update, :destroy ]
   get "/signup", to: "users#new"
+  post "/users", to: "users#create"
   resources :products
   resources :orders
   resources :reviews
