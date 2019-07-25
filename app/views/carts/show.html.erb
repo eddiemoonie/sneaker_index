@@ -1,6 +1,6 @@
 <% @cart.cart_items.each do |cart_item| %>
-  <div class="image-container">
-    <div class="img">
+  <div class="">
+    <div class="">
       <%= image_tag cart_item.product.image.url(:thumb) if cart_item.product.image.exists? %>
       <%= cart_item.product.name %>
       <%= link_to "Remove item", cart_item_path(cart_item), method: :delete %>
