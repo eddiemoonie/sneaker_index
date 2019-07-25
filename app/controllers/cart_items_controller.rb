@@ -12,13 +12,13 @@ class CartItemsController < ApplicationController
     end
 
     @cart_item.save
-    redirect_to cart_path(current_cart)
+    redirect_to cart_path
   end
 
   def destroy
     @cart_item = CartItem.find(params[:id])
     @cart_item.destroy
-    redirect_to cart_path(@current_cart)
+    redirect_to cart_path
   end
 
   private
