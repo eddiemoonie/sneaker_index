@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   private
 
     def require_logged_in
-      redirect_to new_user_path unless logged_in?
+      redirect_to signup_path unless logged_in?
     end
 
     def current_user
@@ -36,4 +36,5 @@ class ApplicationController < ActionController::Base
 
     helper_method :current_user
     helper_method :current_cart
+    helper_method :require_logged_in
 end

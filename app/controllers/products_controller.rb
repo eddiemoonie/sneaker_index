@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :require_logged_in, only: [:new, :edit]
 
   def index
     @products = Product.all
@@ -14,7 +15,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    if @product.user != current_user
+    if @product.user != current_user || @product.sold
       redirect_to root_path
     end
   end
