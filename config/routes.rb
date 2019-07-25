@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   post "/shipping_informations", to: "shipping_informations#create"
   post "/payment_informations", to: "payment_informations#create"
   get "/favorites", to: "favorites_lists#show"
+  post "/favorited_products", to: "favorited_products#create"
 end
