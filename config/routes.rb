@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :products
   resources :orders
   resources :reviews
-  get "/carts/:id", to: "carts#show", as: "cart"
+  get "/cart", to: "carts#show", as: "cart"
   delete "/carts/:id", to: "carts#destroy"
   post "/cart_items", to: "cart_items#create"
   get "/cart_items/:id", to: "cart_items#show", as: "cart_item"
