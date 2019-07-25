@@ -1,6 +1,10 @@
 class SessionsController < ApplicationController
   def new
-    @user = User.new
+    if logged_in?
+      redirect_to root_path
+    else
+      @user = User.new
+    end
   end
 
   def create
@@ -10,7 +14,7 @@ class SessionsController < ApplicationController
       # redirect_to user_path(@user)
       redirect_to root_path
     else
-      redirect_to root_path
+      redirect_to login_path
     end
   end
 

@@ -1,12 +1,15 @@
 class OrdersController < ApplicationController
   before_action :require_logged_in
-  
+
   def index
     @orders = Order.all
   end
 
   def show
     @order = Order.find(params[:id])
+    if @order.user != current_user
+      redirect_to root_path
+    end
   end
 
   def new
