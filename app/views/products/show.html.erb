@@ -58,7 +58,9 @@
   <% if !@product.sold %>
     <div class="buttons">
       <p><%= button_to "Add to Cart", cart_items_path(:product_id => @product.id) %></p>
-      <p><%= button_to "Add to Favorites List", favorited_products_path(:product_id => @product.id, :favorites_list_id => current_user.favorites_list.id) %></p>
+      <% if current_user %>
+        <p><%= button_to "Add to Favorites List", favorited_products_path(:product_id => @product.id, :favorites_list_id => current_user.favorites_list.id) %></p>
+      <% end %>
     </div>
   <% end %>
 </div>

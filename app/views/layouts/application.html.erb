@@ -21,7 +21,9 @@
           <%= link_to "Cart", cart_path(@current_cart) %>
           <%= link_to "Log Out", logout_path, method: :delete %>
         <% else %>
-          <%= render :partial => 'sessions/new', :locals => { :user => @user } %>
+          <%= link_to "Log In", login_path %>
+          <%= link_to "Sign Up", new_user_path %>
+          <%# render :partial => 'sessions/new', :locals => { :user => @user } %>
         <% end %>
       </nav>
     </header>

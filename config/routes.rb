@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root "products#index"
-  get "/", to: "sessions#new"
+  get "/login", to: "sessions#new"
   post "/sessions/create", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   resources :users
