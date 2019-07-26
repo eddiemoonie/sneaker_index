@@ -62,7 +62,11 @@
   <% elsif !@product.sold && @product.user != current_user %>
     <div class="buttons">
       <%= button_to "Add to Cart", cart_items_path(:product_id => @product.id) %>
-      <%= button_to "Add to Favorites", favorited_products_path(:product_id => @product.id, :favorites_list_id => current_user.favorites_list.id) %>
+      <% if current_user.favorited_products.include?(@product) %>
+        <%= button_to "Remove from Favorites" %>
+      <% else %>
+        <%= button_to "Add to Favorites", favorited_products_path(:product_id => @product.id, :favorites_list_id => current_user.favorites_list.id) %>
+      <% end %>
     </div>
   <% end %>
 </div>

@@ -8,7 +8,6 @@ class FavoritedProductsController < ApplicationController
     favorites_list = FavoritesList.find(params[:favorites_list_id])
 
     @favorited_product = FavoritedProduct.new
-    binding.pry
     @favorited_product.product = product
     @favorited_product.favorites_list = favorites_list
     if @favorited_product.save
