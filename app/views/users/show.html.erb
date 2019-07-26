@@ -1,4 +1,4 @@
-<h3>Order History</h3>
+<h2>Order History</h2>
 
 <% @user.orders.each do |order| %>
   <% order.products.each do |product| %>
@@ -10,15 +10,15 @@
         <% if @user == current_user && !product.review %>
           <%= link_to "(Leave a Review)", new_review_path(:product_id => product.id) %> |
         <% else %>
-          <%= link_to "(View Review)", review_path(product.review) %>
+          <%= link_to "(View Review)", review_path(product.review) %> |
         <% end %>
-        <strong><%= number_to_currency(product.price, :unit => "$") %></strong>
+        <%= number_to_currency(product.price, :unit => "$") %>
       </div>
     </div>
   <% end %>
 <% end %>
 
-<h3>Your Market</h3>
+<h2>Your Market</h2>
   <% @user.products.each do |product| %>
     <% if !product.sold %>
       <div class="column">
