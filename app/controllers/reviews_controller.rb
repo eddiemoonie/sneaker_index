@@ -1,4 +1,9 @@
 class ReviewsController < ApplicationController
+
+  def show
+    @review = Review.find(params[:id])
+  end
+
   def new
     @review = Review.new
   end
@@ -6,7 +11,6 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.user = current_user
-    binding.pry
     if @review.save
       redirect_to user_path(current_user)
     else
