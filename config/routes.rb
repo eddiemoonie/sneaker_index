@@ -3,12 +3,13 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/sessions/create", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
-  resources :users, only: [:show, :update, :destroy ]
+  resources :users, only: [:show, :update, :destroy]
   get "/signup", to: "users#new"
   post "/users", to: "users#create"
   resources :products
   resources :orders
   resources :reviews
+  resources :favorited_products, only: [:destroy]
   get "/cart", to: "carts#show", as: "cart"
   delete "/carts/:id", to: "carts#destroy"
   post "/cart_items", to: "cart_items#create"

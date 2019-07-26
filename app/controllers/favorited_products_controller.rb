@@ -17,6 +17,12 @@ class FavoritedProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @favorited_product = FavoritedProduct.find_by_product_id(params[:id])
+    @favorited_product.destroy
+    redirect_to "/favorites"
+  end
+
   private
 
   def favorited_product_params

@@ -13,6 +13,7 @@
           <p><%= link_to "#{product.name}", product_path(product) %></p>
           <p><%= product.size %></p>
           <p><%= number_to_currency(product.price, :unit => "$") %></p>
+          <%= button_to "Delete", {:controller => "favorited_products", :action => 'destroy', :id => product.id}, :method => :delete %>
         </div>
       <% end %>
     <% end %>
