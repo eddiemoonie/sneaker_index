@@ -25,10 +25,10 @@ class User < ApplicationRecord
         count += 1
       end
     end
-    if count = 0
+    if count == 0
       return ""
     else
-      sum/count
+      '%.1f' % (sum/count) 
     end
   end
 end
