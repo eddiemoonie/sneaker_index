@@ -8,8 +8,7 @@
           </div>
         </div>
         <p><%= link_to "#{product.name}", product_path(product) %></p>
-        <p><%= product.size %></p>
-        <p><%= number_to_currency(product.price, :unit => "$") %></p>
+        <p><%= product.size %> | <%= number_to_currency(product.price, :unit => "$") %></p>
         <% if @current_cart.products.include?(product) %>
           <div class="buttons-left">
             <%= button_to "Added to Cart", {}, :disabled => true %>
