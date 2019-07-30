@@ -1,2 +1,9 @@
-<%= @review.rating %>
-<%= @review.post %>
+<div class="">
+  <div class="img">
+    <%= image_tag @review.product.image.url(:large) if @review.product.image.exists? %>
+  </div>
+</div>
+
+<p><strong>Rating: </strong><%= @review.rating %></p>
+<p><%= @review.post %></p>
+<%= button_to "Edit", edit_review_path(@review, :product_id => @review.product.id), :method => :get %>
