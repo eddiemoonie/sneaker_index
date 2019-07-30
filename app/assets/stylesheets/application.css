@@ -123,6 +123,10 @@ form {
   border: 2px solid grey;
 }
 
+.buttons-left {
+  float: left;
+}
+
 /* User Show Page */
 .column-left{ display: inline-block; width: 33%; padding: 10px; vertical-align: top;}
 .column-right{ display: inline-block; width: 33%; padding: 10px; vertical-align: top;}
