@@ -14,15 +14,31 @@
       <h1><%= link_to "#sneakerindex", root_path %></h1>
       <nav>
         <% if current_user %>
-          <%= link_to "Marketplace", root_path %>
-          <%= link_to "Account", user_path(current_user) %>
-          <%= link_to "Favorites", "/favorites" %>
-          <%= link_to "Sell", new_product_path %>
-          <%= link_to "Cart", cart_path %>
-          <%= link_to "Log Out", logout_path, method: :delete %>
+          <div class="tablinks">
+            <%= link_to "Marketplace", root_path, :class => "tablinks" %>
+          </div>
+          <div class="tablinks">
+            <%= link_to "Account", user_path(current_user), :class => "tablinks" %>
+          </div>
+          <div class="tablinks">
+            <%= link_to "Favorites", "/favorites", :class => "tablinks" %>
+          </div>
+          <div class="tablinks">
+            <%= link_to "Sell", new_product_path, :class => "tablinks" %>
+          </div>
+          <div class="tablinks">
+            <%= link_to "Cart", cart_path, :class => "tablinks" %>
+          </div>
+          <div class="tablinks">
+            <%= link_to "Log Out", logout_path, :method => :delete, :class => "tablinks" %>
+          </div>
         <% else %>
-          <%= link_to "Log In", login_path %>
-          <%= link_to "Sign Up", signup_path %>
+          <div class="tablinks">
+            <%= link_to "Log In", login_path, :class => "tablinks" %>
+          </div>
+          <div class="tablinks">
+            <%= link_to "Sign Up", signup_path, :class => "tablinks" %>
+          </div>
         <% end %>
       </nav>
     </header>
