@@ -16,10 +16,14 @@
             </div>
           </div>
           <p><%= link_to "#{product.name}", product_path(product) %></p>
-          <p><%= product.size %></p>
-          <p><%= number_to_currency(product.price, :unit => "$") %></p>
+          <p><%= product.size %> | <%= number_to_currency(product.price, :unit => "$") %></p>
           <div class="buttons-left">
-            <%= button_to "Remove", {:controller => "favorited_products", :action => 'destroy', :id => product.id}, :method => :delete, :class => "index-buttons" %>
+            <% if @current_cart.products.include?(@product) %>
+              <p><%= button_to "Added to Cart", {}, :disabled => true %></p>
+            <% else %>
+              <p><%= button_to "Add to Cart", cart_items_path(:product_id => product.id) %></p>
+            <% end %>
+            <p><%= button_to "Remove", {:controller => "favorited_products", :action => 'destroy', :id => product.id}, :method => :delete %></p>
           </div>
         </div>
       <% end %>

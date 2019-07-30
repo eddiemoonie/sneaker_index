@@ -18,6 +18,11 @@
       <p><%= link_to "#{product.name}", product_path(product) %></p>
       <p><%= product.size %></p>
       <p><%= number_to_currency(product.price, :unit => "$") %></p>
+      <% if !product.sold && product.user == current_user %>
+        <div class="buttons-left">
+          <%= button_to "Edit", edit_product_path(product), :method => :get %>
+        </div>
+      <% end %>
     </div>
   <% end %>
 <% end %>

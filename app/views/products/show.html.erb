@@ -54,12 +54,8 @@
       <% end %>
     </ul>
   </div>
-
-  <% if !@product.sold && @product.user == current_user %>
-    <div class="buttons">
-      <%= button_to "Edit", edit_product_path(@product), :method => :get %>
-    </div>
-  <% elsif !@product.sold && @product.user != current_user %>
+  
+  <% if !@product.sold && @product.user != current_user %>
     <div class="buttons">
       <% if @current_cart.products.include?(@product) %>
         <%= button_to "Added to Cart", {}, :disabled => true %>

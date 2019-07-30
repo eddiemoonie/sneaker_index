@@ -95,6 +95,10 @@ a {
   background-color: #ccc;
 }
 
+form.button_to {
+  display: inline-block;
+}
+
 ul {
   padding: 0;
   list-style: none;
@@ -150,7 +154,8 @@ form {
 }
 
 .buttons-left {
-  float: left;
+  float: left
+  display:inline-block
 }
 
 /* User Show Page */
@@ -228,6 +233,7 @@ form {
 .img {
   display: block;
   margin: auto;
+
 }
 
 .row {
