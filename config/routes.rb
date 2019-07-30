@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   get "/signup", to: "users#new"
   post "/users", to: "users#create"
   resources :products
-  resources :orders
+  # resources :orders
+  resources :orders, only: [:show, :new, :create]
+  get "/orders", to: "orders#index"
   resources :reviews
   resources :favorited_products, only: [:destroy]
   get "/cart", to: "carts#show", as: "cart"

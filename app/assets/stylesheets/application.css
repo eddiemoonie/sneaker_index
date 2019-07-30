@@ -28,6 +28,7 @@ body {
   line-height: 1.42857143;
   color: #333;
   background-color: #fff;
+  overflow: hidden;
 }
 
 /* Navbar and header */
@@ -41,11 +42,11 @@ a {
   text-decoration: none;
 }
 /* Style the tab */
-.tab {
+/* .tab {
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
-}
+} */
 
 /* Style the buttons that are used to open the tab content */
 .tablinks {
@@ -66,6 +67,31 @@ a {
 
 /* Create an active/current tablink class */
 .tablinks.active {
+  background-color: #ccc;
+}
+
+.account-tablinks {
+  background-color: inherit;
+  justify-content: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.display {
+  text-align: center;
+}
+
+/* Change background color of buttons on hover */
+.account-tablinks:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.account-tablinks.active {
   background-color: #ccc;
 }
 
