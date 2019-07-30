@@ -67,10 +67,12 @@
         <%= button_to "Add to Cart", cart_items_path(:product_id => @product.id) %>
       <% end %>
 
-      <% if current_user.favorites_list.products.include?(@product) %>
-        <%= button_to "Delete from Favorites", {:controller => "favorited_products", :action => 'destroy', :id => @product.id}, :method => :delete %>
-      <% else %>
-        <%= button_to "Add to Favorites", favorited_products_path(:product_id => @product.id, :favorites_list_id => current_user.favorites_list.id) %>
+      <% if current_user %>
+        <% if current_user.favorites_list.products.include?(@product) %>
+          <%= button_to "Remove from Favorites", {:controller => "favorited_products", :action => 'destroy', :id => @product.id}, :method => :delete %>
+        <% else %>
+          <%= button_to "Add to Favorites", favorited_products_path(:product_id => @product.id, :favorites_list_id => current_user.favorites_list.id) %>
+        <% end %>
       <% end %>
     </div>
   <% end %>
