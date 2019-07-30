@@ -205,6 +205,8 @@ form {
 }
 
 .row {
+  height: 700px;
+  overflow-y: scroll;
   /* border: 2px solid grey; */
 }
 
