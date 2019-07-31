@@ -47,6 +47,8 @@ header {
 }
 
 #small-title {
+  color: #0080F0;
+  font-size: 20px;
   font-family: "Chalkduster", fantasy;
 }
 
