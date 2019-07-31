@@ -28,7 +28,6 @@ body {
   line-height: 1.42857143;
   color: #333;
   /* background-color: #fff; */
-  overflow: hidden;
   background-color: #FDFDFD;
 }
 
@@ -38,6 +37,7 @@ header {
   justify-content: space-around;
   border-bottom: 1px solid rgb(206, 206, 206);
   /* background-color: #ACCBFF; */
+  overflow: hidden;
   background-color: #0080F0;
 }
 
@@ -121,15 +121,19 @@ ul {
 h1 {
   display: flex;
   justify-content: space-around;
-  color: #fff;
 }
 
 h2 {
   text-align: center;
 }
 
+#prod-h2 {
+  margin: auto;
+}
+
 .prod-h2 {
   margin: auto;
+  color: #fff;
 }
 
 h3 {
@@ -138,6 +142,10 @@ h3 {
 
 h4 {
   margin: auto;
+}
+
+.white {
+  color: #fff;
 }
 
 .navbar-nav{
@@ -196,6 +204,7 @@ form {
 .prod-head {
   border-style: ridge;
   display: flex;
+  /* background-color: #0080F0; */
 }
 
 .product {
@@ -218,9 +227,28 @@ form {
   text-align: center;
 }
 
+.prod-specs-head {
+  display: inline-block;
+  width: 33%;
+  padding: 10px;
+  border-style: ridge;
+  text-align: center;
+  background-color: #0080F0;
+}
+
+.prod-desc-head {
+  display: inline-block;
+  width: 67%;
+  padding: 10px;
+  border-style: ridge;
+  text-align: center;
+  background-color: #0080F0;
+}
+
 .seller-info-head {
   border-style: ridge;
   display: flex;
+  background-color: #0080F0;
 }
 
 .seller-info {

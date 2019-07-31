@@ -1,75 +1,77 @@
 <h1><%= @product.name %></h1>
 
-<div class="product-col-left">
-  <div class="image-container">
-    <div class="img">
-      <%= image_tag @product.image.url(:large) if @product.image.exists? %>
+<div class="row">
+  <div class="product-col-left">
+    <div class="image-container">
+      <div class="img">
+        <%= image_tag @product.image.url(:large) if @product.image.exists? %>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="prod-head">
+      <h2 id="prod-h2">Product Details</h2>
+    </div>
+
+
+    <div class="product">
+      <div class="prod-specs-head">
+        <h4 class="white">Product Specs</h4>
+      </div>
+      <div class="prod-desc-head">
+        <h4 class="white">Description</h4>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="prod-specs">
+        <label for="">Price: </label><strong><%= number_to_currency(@product.price, :unit => "$") %></strong><br>
+        <label for="">Size: </label><strong><%= @product.size %></strong><br>
+        <label for="">Condition: </label><strong><%= @product.condition %></strong>
+      </div>
+
+      <div class="prod-description">
+        <p><%= @product.description %></p>
+      </div>
     </div>
   </div>
 
-  <br>
-
-  <div class="prod-head">
-    <h2 class="prod-h2">Product Details</h2>
-  </div>
-
-
-  <div class="product">
-    <div class="prod-specs">
-      <h4>Product Specs</h4>
-    </div>
-    <div class="prod-description">
-      <h4>Description</h4>
-    </div>
-  </div>
-
-  <div class="product">
-    <div class="prod-specs">
-      <label for="">Price: </label><strong><%= number_to_currency(@product.price, :unit => "$") %></strong><br>
-      <label for="">Size: </label><strong><%= @product.size %></strong><br>
-      <label for="">Condition: </label><strong><%= @product.condition %></strong>
+  <div class="product-col-right">
+    <div class="seller-info-head">
+      <h2 class="prod-h2">Seller Information</h2>
     </div>
 
-    <div class="prod-description">
-      <p><%= @product.description %></p>
-    </div>
-  </div>
-</div>
+    <div class="seller-info">
+      <label for="">Seller: </label><%= link_to "#{@product.user.username}", user_path(@product.user) %><br>
+      <label for="">Rating: </label><strong><%= @user.average_rating %></strong><br><br>
 
-<div class="product-col-right">
-  <div class="seller-info-head">
-    <h2 class="prod-h2">Seller Information</h2>
-  </div>
-
-  <div class="seller-info">
-    <label for="">Seller: </label><%= link_to "#{@product.user.username}", user_path(@product.user) %><br>
-    <label for="">Rating: </label><strong><%= @user.average_rating %></strong><br><br>
-
-    <h4>Seller Reviews</h4>
-    <ul>
-      <% @user.products.each do |product| %>
-        <% if product.review %>
-          <li>"<%= product.review.post %>" -<%= product.review.user.username %></li>
+      <h4>Seller Reviews</h4>
+      <ul>
+        <% @user.products.each do |product| %>
+          <% if product.review %>
+            <li>"<%= product.review.post %>" -<%= product.review.user.username %></li>
+          <% end %>
         <% end %>
-      <% end %>
-    </ul>
-  </div>
-  
-  <% if !@product.sold && @product.user != current_user %>
-    <div class="buttons">
-      <% if @current_cart.products.include?(@product) %>
-        <%= button_to "Added to Cart", {}, :disabled => true %>
-      <% else %>
-        <%= button_to "Add to Cart", cart_items_path(:product_id => @product.id) %>
-      <% end %>
+      </ul>
+    </div>
 
-      <% if current_user %>
-        <% if current_user.favorites_list.products.include?(@product) %>
-          <%= button_to "Remove from Favorites", {:controller => "favorited_products", :action => 'destroy', :id => @product.id}, :method => :delete %>
+    <% if !@product.sold && @product.user != current_user %>
+      <div class="buttons">
+        <% if @current_cart.products.include?(@product) %>
+          <%= button_to "Added to Cart", {}, :disabled => true %>
         <% else %>
-          <%= button_to "Add to Favorites", favorited_products_path(:product_id => @product.id, :favorites_list_id => current_user.favorites_list.id) %>
+          <%= button_to "Add to Cart", cart_items_path(:product_id => @product.id) %>
         <% end %>
-      <% end %>
-    </div>
-  <% end %>
+
+        <% if current_user %>
+          <% if current_user.favorites_list.products.include?(@product) %>
+            <%= button_to "Remove from Favorites", {:controller => "favorited_products", :action => 'destroy', :id => @product.id}, :method => :delete %>
+          <% else %>
+            <%= button_to "Add to Favorites", favorited_products_path(:product_id => @product.id, :favorites_list_id => current_user.favorites_list.id) %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
