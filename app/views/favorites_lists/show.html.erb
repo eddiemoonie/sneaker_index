@@ -18,7 +18,7 @@
           <p><%= link_to "#{product.name}", product_path(product), :class => "preview-name" %></p>
           <p class="preview-desc" ><%= product.size %> | <%= number_to_currency(product.price, :unit => "$") %></p>
           <div class="buttons-left">
-            <% if @current_cart.products.include?(@product) %>
+            <% if @current_cart.products.include?(product) %>
               <p><%= button_to "Added to Cart", {}, :disabled => true %></p>
             <% else %>
               <p><%= button_to "Add to Cart", cart_items_path(:product_id => product.id), :class => "preview-desc" %></p>
