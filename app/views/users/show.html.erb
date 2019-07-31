@@ -1,8 +1,8 @@
 <h2><%= current_user.username %>'s Account</h2>
 <div class="display">
-    <%= link_to "Order History", orders_path, :class => "account-tablinks" %>
-    <%= link_to "Your Market", user_path(current_user), :class => "account-tablinks" %>
-    <%= link_to "Favorites", "/favorites", :class => "account-tablinks" %>
+  <%= link_to "Order History", orders_path, :class => "account-tablinks" %>
+  <%= link_to "Your Market", user_path(current_user), :class => "account-tablinks" %>
+  <%= link_to "Favorites", "/favorites", :class => "account-tablinks" %>
 </div>
 
 <br>
@@ -15,11 +15,11 @@
           <%= image_tag product.image.url(:preview) if product.image.exists? %>
         </div>
       </div>
-      <p><%= link_to "#{product.name}", product_path(product) %></p>
-      <p><%= product.size %> | <%= number_to_currency(product.price, :unit => "$") %></p>
+      <p><%= link_to "#{product.name}", product_path(product), :class => "preview-name" %></p>
+      <p class="preview-desc" ><%= product.size %> | <%= number_to_currency(product.price, :unit => "$") %></p>
       <% if !product.sold && product.user == current_user %>
         <div class="buttons-left">
-          <%= button_to "Edit", edit_product_path(product), :method => :get %>
+          <%= button_to "Edit", edit_product_path(product), :method => :get, :class => "preview-desc" %>
         </div>
       <% end %>
     </div>

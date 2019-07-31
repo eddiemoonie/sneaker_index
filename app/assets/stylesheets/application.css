@@ -27,8 +27,9 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #fff;
+  /* background-color: #fff; */
   overflow: hidden;
+  background-color: #FDFDFD;
 }
 
 /* Navbar and header */
@@ -36,6 +37,12 @@ header {
   display: flex;
   justify-content: space-around;
   border-bottom: 1px solid rgb(206, 206, 206);
+  /* background-color: #ACCBFF; */
+  background-color: #0080F0;
+}
+
+#title {
+  color: #fff;
 }
 
 a {
@@ -58,6 +65,8 @@ a {
   padding: 14px 16px;
   transition: 0.3s;
   text-decoration: none;
+  color: #fff;
+  font-weight: bold;
 }
 
 /* Change background color of buttons on hover */
@@ -71,7 +80,10 @@ a {
 }
 
 .account-tablinks {
-  background-color: inherit;
+  background-color: #0080F0;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  color: #fff;
   justify-content: center;
   border: none;
   outline: none;
@@ -79,10 +91,12 @@ a {
   padding: 14px 16px;
   transition: 0.3s;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .display {
   text-align: center;
+  width: 100%;
 }
 
 /* Change background color of buttons on hover */
@@ -107,6 +121,7 @@ ul {
 h1 {
   display: flex;
   justify-content: space-around;
+  color: #fff;
 }
 
 h2 {
@@ -219,6 +234,15 @@ form {
 }
 
 /* Products Index */
+.preview-desc {
+  color: #0080F0;
+}
+
+.preview-name {
+  color: #0080F0;
+  font-weight: bold;
+}
+
 .column {
   display: inline-block;
   width: 33%;
@@ -228,6 +252,7 @@ form {
 .image-container {
   border-style: ridge;
   display: flex;
+  background-color: #fff;
 }
 
 .img {
