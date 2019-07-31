@@ -175,9 +175,30 @@ h4 {
     box-sizing: border-box;
 }
 
+.user-input {
+  text-align: center;
+  height: 50px;
+  font-size: 20px;
+}
+
+.welcome-input {
+  padding-bottom: 20px;
+}
+
+.user-buttons {
+  width: 100px;
+  font-size: 25px;
+  color: #0080F0;
+}
+
+#login-div {
+  padding-top: 100px;
+}
+
 form {
   margin: 0 auto;
-  width: 130px;
+  text-align: center;
+  /* width: 130px; */
 }
 
 .form-container {

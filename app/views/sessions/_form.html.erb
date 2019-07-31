@@ -1,5 +1,14 @@
 <%= form_for :user, :url => url_for(:controller => "sessions", :action => "create") do |f| %>
-    <%= f.text_field :username, :placeholder => "Username" %>
-    <%= f.password_field :password, :placeholder => "Password" %>
-    <%= f.submit "Log In" %>
+  <div class="welcome-input">
+    <%= f.text_field :username, :placeholder => "Username", :class => "user-input" %>
+  </div>
+
+  <div class="welcome-input">
+    <%= f.password_field :password, :placeholder => "Password", :class => "user-input" %>
+  </div>
+
+  <div class="">
+    <%= f.submit "Log In", :class => "user-buttons" %>
+  </div>
+
 <% end %>
