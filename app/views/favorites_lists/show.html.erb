@@ -5,6 +5,8 @@
     <%= link_to "Favorites", "/favorites", :class => "account-tablinks" %>
 </div>
 
+<br>
+
 <% if @favorites_list.products.count > 0 %>
   <div class="row">
     <% @favorites_list.products.each do |product| %>
