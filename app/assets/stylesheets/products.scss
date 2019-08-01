@@ -1,3 +1,136 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Product Show */
+.product-col-left {
+  display: inline-block;
+  width: 66%;
+  padding: 10px;
+  vertical-align: top;
+}
+
+.product-col-right {
+  display: inline-block;
+  width: 33%;
+  padding: 10px;
+  vertical-align: top;
+}
+
+.prod-head {
+  border-style: ridge;
+  display: flex;
+  background-color: #0080F0;
+}
+
+.product {
+  display: flex;
+}
+
+.prod-specs {
+  display: inline-block;
+  width: 33%;
+  padding: 10px;
+  border-style: ridge;
+  text-align: center;
+}
+
+.prod-description {
+  display: inline-block;
+  width: 67%;
+  padding: 10px;
+  border-style: ridge;
+  text-align: center;
+}
+
+.prod-specs-head {
+  display: inline-block;
+  width: 33%;
+  padding: 10px;
+  border-style: ridge;
+  text-align: center;
+  background-color: #0080F0;
+}
+
+.prod-desc-head {
+  display: inline-block;
+  width: 67%;
+  padding: 10px;
+  border-style: ridge;
+  text-align: center;
+  background-color: #0080F0;
+}
+
+#prod-h2 {
+  margin: auto;
+  color: #fff;
+}
+
+.prod-h2 {
+  margin: auto;
+  color: #fff;
+}
+
+.product-buttons {
+  color: #0080F0;
+}
+
+.seller-info-head {
+  border-style: ridge;
+  display: flex;
+  background-color: #0080F0;
+}
+
+#seller-name {
+  color: #0080F0;
+}
+
+.seller-info {
+  padding: 10px;
+  border-style: ridge;
+  text-align: center;
+}
+
+.buttons {
+  text-align: center;
+}
+
+/* Products Index */
+.preview-desc {
+  color: #0080F0;
+}
+
+.preview-name {
+  color: #0080F0;
+  font-weight: bold;
+}
+
+.column {
+  display: inline-block;
+  width: 33%;
+  padding: 10px;
+}
+
+.image-container {
+  border-style: ridge;
+  display: flex;
+  background-color: #fff;
+}
+
+.img {
+  display: block;
+  margin: auto;
+
+}
+
+.row {
+  height: 700px;
+  overflow-y: scroll;
+  /* border: 2px solid grey; */
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
