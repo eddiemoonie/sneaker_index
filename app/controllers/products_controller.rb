@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :require_logged_in, only: [:new, :edit]
 
   def index
-    @products = Product.all
+    @products = Product.all.order("created_at DESC")
   end
 
   def show
