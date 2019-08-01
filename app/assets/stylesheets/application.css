@@ -136,6 +136,7 @@ h2 {
 
 #prod-h2 {
   margin: auto;
+  color: #fff;
 }
 
 .prod-h2 {
@@ -236,7 +237,7 @@ form {
 .prod-head {
   border-style: ridge;
   display: flex;
-  /* background-color: #0080F0; */
+  background-color: #0080F0;
 }
 
 .product {
@@ -277,10 +278,18 @@ form {
   background-color: #0080F0;
 }
 
+.product-buttons {
+  color: #0080F0;
+}
+
 .seller-info-head {
   border-style: ridge;
   display: flex;
   background-color: #0080F0;
+}
+
+#seller-name {
+  color: #0080F0;
 }
 
 .seller-info {
