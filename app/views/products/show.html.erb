@@ -66,9 +66,9 @@
 
         <% if current_user %>
           <% if current_user.favorites_list.products.include?(@product) %>
-            <%= button_to "Remove from Favorites", {:controller => "favorited_products", :action => 'destroy', :id => @product.id}, :method => :delete %>
+            <%= button_to "Remove from Favorites", {:controller => "favorited_products", :action => 'destroy', :id => @product.id}, :method => :delete, :class => "product-buttons" %>
           <% else %>
-            <%= button_to "Add to Favorites", favorited_products_path(:product_id => @product.id, :favorites_list_id => current_user.favorites_list.id) %>
+            <%= button_to "Add to Favorites", favorited_products_path(:product_id => @product.id, :favorites_list_id => current_user.favorites_list.id), :class => "product-buttons" %>
           <% end %>
         <% end %>
       </div>
