@@ -7,20 +7,26 @@
 
 <br>
 
-<% current_user.orders.each do |order| %>
-  <% order.products.each do |product| %>
-    <div class="">
-      <div class="img">
-        <%= image_tag product.image.url(:thumb) if product.image.exists? %>
-        <%= link_to "#{product.name}", product_path(product) %> |
-        <strong>Seller: </strong><%= link_to "#{product.user.username}", user_path(product.user) %>
-        <% if @user == current_user && !product.review %>
-          <%= link_to "(Leave a Review)", new_review_path(:product_id => product.id) %> |
-        <% else %>
-          <%= link_to "(View Review)", review_path(product.review) %> |
-        <% end %>
-        <%= number_to_currency(product.price, :unit => "$") %>
+<div class="cart-container">
+  <% current_user.orders.each do |order| %>
+    <% order.products.each do |product| %>
+      <div class="cart-div">
+        <span class="cart-left">
+          <%= image_tag product.image.url(:thumb) if product.image.exists? %>
+        </span>
+        <span class="cart-center">
+          <%= link_to "#{product.name}", product_path(product), :class => "preview-name" %><br>
+          Seller: <%= link_to "#{product.user.username}", user_path(product.user), :class => "seller-name" %><br><br>
+          <% if @user == current_user && !product.review %>
+            <%= link_to "Leave a Review", new_review_path(:product_id => product.id), :class => "cart-link-buttons" %>
+          <% else %>
+            <%= link_to "View Review", review_path(product.review), :class => "cart-link-buttons" %>
+          <% end %>
+        </span>
+        <span class="cart-right">
+          <strong><%= number_to_currency(product.price, :unit => "$") %></strong>
+        </span>
       </div>
-    </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>

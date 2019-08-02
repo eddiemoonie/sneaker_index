@@ -8,8 +8,8 @@
         </span>
         <span class="cart-center">
             <%= link_to "#{cart_item.product.name}", product_path(cart_item.product), :class => "preview-name" %><br>
-            Seller: <%= link_to "#{cart_item.product.user.username}", user_path(cart_item.product.user), :id => "seller-name" %><br><br>
-            <%= link_to "Remove item", cart_item_path(cart_item), method: :delete, :id => "remove-button" %>
+            Seller: <%= link_to "#{cart_item.product.user.username}", user_path(cart_item.product.user), :class => "seller-name" %><br><br>
+            <%= link_to "Remove item", cart_item_path(cart_item), method: :delete, :class => "cart-link-buttons" %>
         </span>
         <span class="cart-right">
           <strong><%= number_to_currency(cart_item.product.price, :unit => "$") %></strong>
