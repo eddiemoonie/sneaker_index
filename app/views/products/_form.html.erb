@@ -1,42 +1,30 @@
 <%= form_for @product do |f| %>
 
-  <div class="">
-    <%= f.label :name %>
-    <br>
-    <%= f.text_field :name %>
+  <div class="product-form">
+    <%= f.text_field :name, :placeholder => "Name of Product", :class => "product-input" %>
+  </div>
+
+  <div class="product-form">
+    <%= f.file_field :image, :id => "image-input" %>
+  </div>
+
+  <div class="product-form">
+    <%= f.text_area :description, :placeholder => "Description", :id => "description-input" %>
+  </div>
+
+  <div class="product-form">
+    <%= f.select:size, options_for_select((7.0..15.0).step(0.5)), :prompt => "Size", :class => "select-input" %>
+  </div>
+
+  <div class="product-form">
+    <%= f.select :condition, ["Brand New", "Pre-Owned"], :prompt => "Condition", :class => "select-input" %>
+  </div>
+
+  <div class="product-form">
+    <span class="product-input">$<%= f.text_field :price, :placeholder => "Price", :class => "product-input" %></span>
   </div>
 
   <div class="">
-    <%= f.label :image %>
-    <br>
-    <%= f.file_field :image %>
-  </div>
-
-  <div class="">
-    <%= f.label :description %>
-    <br>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="">
-    <%= f.label :size %>
-    <br>
-    <%= f.select:size, options_for_select((7.0..15.0).step(0.5)), :prompt => "Select" %>
-  </div>
-
-  <div class="">
-    <%= f.label :condition %>
-    <br>
-    <%= f.select :condition, ["Brand New", "Pre-Owned"], :prompt => "Select" %>
-  </div>
-
-  <div class="">
-    <%= f.label :price %>
-    <br>
-    <%= f.text_field :price %>
-  </div>
-
-  <div class="">
-    <%= f.submit %>
+    <%= f.submit "Sell Product", :class => "input-buttons" %>
   </div>
 <% end %>

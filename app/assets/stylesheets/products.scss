@@ -2,6 +2,40 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+/* Product New */
+#new-product-div {
+  padding-top: 50px;
+}
+
+.product-form {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.product-input {
+  text-align: center;
+  height: 50px;
+  font-size: 20px;
+}
+
+#description-input {
+  text-align: center;
+  height: 120px;
+  font-size: 20px;
+}
+
+#image-input {
+  font-size: 20px;
+  width: 215px;
+}
+
+select#product_size, #product_condition {
+  text-align: center;
+  height: 25px;
+  font-size: 15px;
+}
+
 /* Product Show */
 .product-col-left {
   display: inline-block;
