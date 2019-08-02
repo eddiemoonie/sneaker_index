@@ -59,7 +59,7 @@
     <% if !@product.sold && @product.user != current_user %>
       <div class="buttons">
         <% if @current_cart.products.include?(@product) %>
-          <%= button_to "Added to Cart", {}, :disabled => true, :class => "product-buttons" %>
+          <%= button_to "Added to Cart", {}, :disabled => true, :class => "added-buttons" %>
         <% else %>
           <%= button_to "Add to Cart", cart_items_path(:product_id => @product.id), :class => "product-buttons" %>
         <% end %>

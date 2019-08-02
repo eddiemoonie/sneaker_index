@@ -1,3 +1,90 @@
 // Place all the styles related to the Carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cart-container {
+  border-top-style: ridge;
+  border-radius: 5px;
+  overflow-y: scroll;
+}
+
+.cart-div {
+  border-bottom-style: ridge;
+  border-right-style: ridge;
+  border-left-style: ridge;
+}
+
+.cart-div:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.cart-left {
+  float: left;
+  text-align: center;
+  width: 33%;
+  padding: 20px;
+  height: 125px;
+  background-color: #fff;
+}
+
+.cart-center {
+  float: left;
+  width: 33%;
+  padding: 20px;
+  height: 125px;
+  // border-left-style: ridge;
+  // border-right-style: ridge;
+}
+
+.cart-right {
+  float: left;
+  text-align: center;
+  width: 34%;
+  padding: 50px;
+  height: 125px;
+  background-color: #fff;
+}
+
+#remove-button {
+  color: #0080F0;
+}
+
+#price {
+  padding-top: 50px;
+}
+#checkout-button-container{
+  text-align: center;
+  padding-top: 20px;
+}
+
+#checkout-button {
+  // float: right;
+  // width: 33%;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#subtotal {
+  float: left;
+}
+
+#checkout {
+  font-size: 15px;
+  color: #0080F0;
+}
+
+#subtotal-container{
+  font-size: 18px;
+}
+
+#price {
+  padding-left: 122px;
+}
+
+.subtotal-checkout {
+  float: right;
+  width: 34%;
+  padding: 10px;
+}

@@ -1,22 +1,30 @@
 <h2>Shopping Cart</h2>
-
-<% @cart.cart_items.each do |cart_item| %>
-  <div class="">
-    <div class="">
-      <%= image_tag cart_item.product.image.url(:thumb) if cart_item.product.image.exists? %>
-      <%= link_to "#{cart_item.product.name}", product_path(cart_item.product) %> |
-      <strong>Seller: </strong><%= link_to "#{cart_item.product.user.username}", user_path(cart_item.product.user) %> |
-      <%= number_to_currency(cart_item.product.price, :unit => "$") %> |
-      <%= link_to "Remove item", cart_item_path(cart_item), method: :delete %>
-    </div>
-  </div>
-<% end %>
 <% if @cart.cart_items.present? %>
-  <div class="subtotal">
-    <strong>Subtotal: </strong><%= number_to_currency(@cart.subtotal, :unit => "$") %>
-  </div>
-  <div class="checkout">
-    <button><%= link_to "Checkout", new_order_path %></button>
+  <div class="cart-container">
+    <% @cart.cart_items.each do |cart_item| %>
+      <div class="cart-div">
+        <span class="cart-left">
+          <%= image_tag cart_item.product.image.url(:thumb) if cart_item.product.image.exists? %>
+        </span>
+        <span class="cart-center">
+            <%= link_to "#{cart_item.product.name}", product_path(cart_item.product), :class => "preview-name" %><br>
+            Seller: <%= link_to "#{cart_item.product.user.username}", user_path(cart_item.product.user), :id => "seller-name" %><br><br>
+            <%= link_to "Remove item", cart_item_path(cart_item), method: :delete, :id => "remove-button" %>
+        </span>
+        <span class="cart-right">
+          <strong><%= number_to_currency(cart_item.product.price, :unit => "$") %></strong>
+        </span>
+      </div>
+    <% end %>
+    <div class="subtotal-checkout">
+      <div id="subtotal-container">
+        <div id="subtotal">Subtotal: <span id="price"><%= number_to_currency(@cart.subtotal, :unit => "$") %></span></div>
+      </div>
+      <br>
+      <div id="checkout-button-container">
+        <button id="checkout-button"><%= link_to "Checkout", new_order_path, :id => "checkout" %></button>
+      </div>
+    </div>
   </div>
 <% else %>
   <div class="">
