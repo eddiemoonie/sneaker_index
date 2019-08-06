@@ -1,0 +1,67 @@
+// Place all the styles related to the Reviews controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Review New
+.input-container {
+  padding-bottom: 20px;
+}
+
+.review-form {
+  padding-top: 0px;
+}
+
+.review-input {
+  text-align: center;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+// Review Show
+.review-container {
+  margin: auto;
+  width: 810px;
+  text-align: center;
+}
+
+.review {
+  border-style: ridge;
+}
+
+.review-container:after {
+  clear: both;
+}
+
+.review-column-left {
+  display: inline-block;
+  height: 300px;
+  width: 400px;
+  vertical-align: top;
+  text-align: right;
+  background-color: #fff;
+  border-right-style: ridge;
+}
+
+.review-img {
+  padding: 60px;
+  text-align: center;
+}
+
+.review-post {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.review-form {
+}
+
+.review-column-right {
+  display: inline-block;
+  height: 300px;
+  width: 400px;
+  vertical-align: top;
+  text-align: left;
+  background-color: #fff;
+  border-left-style: ridge;
+}

@@ -1,3 +1,15 @@
-Edit Review
+<h1><%= @review.product.name %></h1>
 
-<%= render 'form', review: @review, :product_id => params[:product_id]  %>
+<div class="review-container">
+  <div class="review">
+    <div class="review-column-left">
+      <div class="review-img">
+        <%= image_tag @review.product.image.url(:preview) if @review.product.image.exists? %>
+      </div>
+    </div>
+    <div class="review-column-right">
+      <p class="review-input">Seller: <span class="seller-name"><%= @review.product.user.username %></span></p>
+      <%= render 'form', review: @review, :product_id => params[:product_id]  %>
+    </div>
+  </div>
+</div>

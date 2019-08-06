@@ -1,9 +1,23 @@
-<div class="">
-  <div class="img">
-    <%= image_tag @review.product.image.url(:large) if @review.product.image.exists? %>
+<h1><%= @review.product.name %></h1>
+<div class="review-container">
+  <div class="review">
+    <div class="review-column-left">
+      <div class="review-img">
+        <%= image_tag @review.product.image.url(:preview) if @review.product.image.exists? %>
+      </div>
+    </div>
+
+    <div class="review-column-right">
+      <div class="review-post">
+        <p class="review-input">Seller: <span class="seller-name"><%= @review.seller.username %></span></p>
+        <div class="input-container">
+          <span class="review-input">Rating: <strong><%= @review.seller.average_rating %></strong></span>
+        </div>
+        <div class="input-container">
+          <span class="review-input"><%= @review.post %></span>
+        </div>
+        <%= button_to "Edit", edit_review_path(@review, :product_id => @review.product.id), :method => :get, :class => "input-buttons" %>
+      </div>
+    </div>
   </div>
 </div>
-
-<p><strong>Rating: </strong><%= @review.rating %></p>
-<p><%= @review.post %></p>
-<%= button_to "Edit", edit_review_path(@review, :product_id => @review.product.id), :method => :get %>

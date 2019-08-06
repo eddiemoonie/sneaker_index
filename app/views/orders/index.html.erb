@@ -17,7 +17,7 @@
         <span class="cart-center">
           <%= link_to "#{product.name}", product_path(product), :class => "preview-name" %><br>
           Seller: <%= link_to "#{product.user.username}", user_path(product.user), :class => "seller-name" %><br><br>
-          <% if @user == current_user && !product.review %>
+          <% if current_user && !product.review %>
             <%= link_to "Leave a Review", new_review_path(:product_id => product.id), :class => "cart-link-buttons" %>
           <% else %>
             <%= link_to "View Review", review_path(product.review), :class => "cart-link-buttons" %>

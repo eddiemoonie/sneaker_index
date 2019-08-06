@@ -1,25 +1,24 @@
-<%= form_for @review do |f| %>
+<div class="review-form">
+  <%= form_for @review do |f| %>
 
-  <div class="">
-    <%= f.hidden_field :product_id, :value => params[:product_id] %>
-  </div>
+    <div class="input-container">
+      <%= f.hidden_field :product_id, :value => params[:product_id], :class => "review-input" %>
+    </div>
 
-  <div class="">
-    <%= f.label :rating %>
-    <br>
-    <%= f.select:rating, options_for_select((0..5).step(1)), :prompt => "Select" %>
-  </div>
+    <div class="input-container">
+      <%= f.label :rating, "Rating: ", :class => "review-input" %>
+      <%= f.select:rating, options_for_select((0..5).step(1)), :prompt => "Select", :class => "review-input" %>
+    </div>
 
-  <div class="">
-    <%= f.label :post %>
-    <br>
-    <%= f.text_area :post%>
-  </div>
+    <div class="input-container">
+      <%= f.label :post, "Write a Review...", :class => "review-input" %>
+      <br>
+      <%= f.text_area :post, :class => "review-input"%>
+    </div>
 
-  <br>
+    <div class="">
+      <%= f.submit "Submit", :class => "input-buttons" %>
+    </div>
 
-  <div class="">
-    <%= f.submit "Submit" %>
-  </div>
-
-<% end %>
+  <% end %>
+</div>
