@@ -6,7 +6,6 @@
 </div>
 
 <div class="account-container">
-
   <div class="user-column">
     <% @user.products.each do |product| %>
       <% if !product.sold %>
@@ -32,6 +31,23 @@
 
 
   <div class="review-column">
-
+    <% @user.products.each do |product| %>
+      <% if product.sold && product.review %>
+        <div class="review-containers">
+          <div class="review-img-container">
+            <%= image_tag product.image.url(:thumb) if product.image.exists? %>
+          </div>
+          <div class="review-post">
+            <p class="post">
+              Rating: <%= @user.average_rating %>
+              <br>
+              "<%= product.review.post %>"
+              <br>
+              - <%= product.review.user.username %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>

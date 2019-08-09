@@ -23,13 +23,6 @@
   padding-top: 100px;
 }
 
-.user-column {
-  display: inline-block;
-  width: 67%;
-  height: 625px;
-  overflow-y: scroll;
-}
-
 .user-market-header {
   display: inline-block;
   width: 67%;
@@ -40,12 +33,23 @@
   width: 32%;
 }
 
+.user-column {
+  display: inline-block;
+  width: 67%;
+  height: 610px;
+  overflow-y: scroll;
+  background-color: #fff;
+  border-style: ridge;
+}
+
 .review-column {
   display: inline-block;
   width: 32%;
-  height: 625px;
+  height: 610px;
   vertical-align: top;
   overflow-y: scroll;
+  background-color: #fff;
+  border-style: ridge;
 }
 
 .account-column {
@@ -57,4 +61,25 @@
 .user-market-column {
   width: 67%;
   display: inline-block;
+}
+
+.review-containers {
+  display: inline-block;
+  width: 100%;
+  border-style: ridge;
+
+}
+
+.review-img-container {
+  float: left;
+  padding: 10px;
+}
+
+.review-post {
+  float: left;
+  width: 70%;
+}
+
+.post {
+  margin-top: 0;
 }
