@@ -1,19 +1,37 @@
-<h2><%= current_user.username %>'s Market</h2>
-<% @user.products.each do |product| %>
-  <% if !product.sold %>
-    <div class="column">
-      <div class="image-container">
-        <div class="img">
-          <%= image_tag product.image.url(:preview) if product.image.exists? %>
-        </div>
-      </div>
-      <p><%= link_to "#{product.name}", product_path(product), :class => "preview-name" %></p>
-      <p class="preview-desc" ><%= product.size %> | <%= number_to_currency(product.price, :unit => "$") %></p>
-      <% if !product.sold && product.user == current_user %>
-        <div class="buttons-left">
-          <%= button_to "Edit", edit_product_path(product), :method => :get, :class => "preview-desc" %>
+<h2><%= @user.username %>'s Account</h2>
+
+<div class="header-container">
+  <h3 class="user-market-header">Market</h3>
+  <h3 class="user-review-header">Reviews</h3>
+</div>
+
+<div class="account-container">
+
+  <div class="user-column">
+    <% @user.products.each do |product| %>
+      <% if !product.sold %>
+        <div class="account-column">
+          <div class="image-container">
+            <div class="img">
+              <%= image_tag product.image.url(:preview) if product.image.exists? %>
+            </div>
+          </div>
+          <p><%= link_to "#{product.name}", product_path(product), :class => "preview-name" %></p>
+          <p class="preview-desc" ><%= product.size %> | <%= number_to_currency(product.price, :unit => "$") %></p>
+          <div class="buttons-left">
+            <% if @current_cart.products.include?(product) %>
+              <p><%= button_to "Added to Cart", {}, :disabled => true %></p>
+            <% else %>
+              <p><%= button_to "Add to Cart", cart_items_path(:product_id => product.id), :class => "preview-desc" %></p>
+            <% end %>
+          </div>
         </div>
       <% end %>
-    </div>
-  <% end %>
-<% end %>
+    <% end %>
+  </div>
+
+
+  <div class="review-column">
+
+  </div>
+</div>
