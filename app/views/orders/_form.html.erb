@@ -4,36 +4,36 @@
   <h3>Shipping Address</h3>
 
   <%= f.fields_for :shipping_information do |s| %>
-    <%= s.text_field :first_name, :placeholder => "First Name" %>
-    <%= s.text_field :last_name, :placeholder => "Last Name" %>
+    <%= s.text_field :first_name, :placeholder => "First Name", :class => "order-input" %>
+    <%= s.text_field :last_name, :placeholder => "Last Name", :class => "order-input" %>
     <br>
-    <%= s.text_field :email, :placeholder => "Email" %>
+    <%= s.text_field :email, :placeholder => "Email", :class => "order-input" %>
     <br>
-    <%= s.text_field :street_address, :placeholder => "Street Address" %>
-    <%= s.text_field :city, :placeholder => "City" %>
+    <%= s.text_field :street_address, :placeholder => "Street Address", :class => "order-input" %>
+    <%= s.text_field :city, :placeholder => "City", :class => "order-input" %>
     <br>
-    <%= s.text_field :state, :placeholder => "State" %>
-    <%= s.number_field :zip_code, :placeholder => "Zip Code" %>
+    <%= s.text_field :state, :placeholder => "State", :class => "order-input" %>
+    <%= s.number_field :zip_code, :placeholder => "Zip Code", :class => "order-input" %>
   <% end %>
 
   <h3>Payment Details</h3>
 
   <%= f.fields_for :payment_information do |s| %>
-    <%= s.text_field :card_number, :placeholder => "Card Number" %>
-    <%= s.text_field :full_name, :placeholder => "Name on Card" %>
+    <%= s.text_field :card_number, :placeholder => "Card Number", :class => "order-input" %>
+    <%= s.text_field :full_name, :placeholder => "Name on Card", :class => "order-input" %>
     <br>
-    <%= s.select :exp_month, options_for_select((01..12).step(1)), :prompt => "MM" %>
+    <%= s.select :exp_month, options_for_select((01..12).step(1)), :prompt => "MM", :class => "order-input" %>
     <%= s.select :exp_year, options_for_select((Date.current.year..2030).step(1)), :prompt => "YY" %>
-    <%= s.text_field :ccv, :placeholder => "CCV" %>
+    <%= s.text_field :ccv, :placeholder => "CCV", :class => "order-input" %>
     <br>
     <h3>Billing Address</h3>
-    <%= s.text_field :street_address, :placeholder => "Street Address" %>
-    <%= s.text_field :city, :placeholder => "City" %>
+    <%= s.text_field :street_address, :placeholder => "Street Address", :class => "order-input" %>
+    <%= s.text_field :city, :placeholder => "City", :class => "order-input" %>
     <br>
-    <%= s.text_field :state, :placeholder => "State" %>
-    <%= s.number_field :zip_code, :placeholder => "Zip Code" %>
+    <%= s.text_field :state, :placeholder => "State", :class => "order-input" %>
+    <%= s.number_field :zip_code, :placeholder => "Zip Code", :class => "order-input" %>
 
   <% end %>
   <br><br>
-  <%= f.submit "Place Order" %>
+  <%= f.submit "Place Order", :class => "input-buttons" %>
 <% end %>
