@@ -12,7 +12,9 @@
     <% order.products.each do |product| %>
       <div class="cart-div">
         <span class="cart-left">
-          <%= image_tag product.image.url(:thumb) if product.image.exists? %>
+          <a href="/orders/<%= order.id %>">
+            <%= image_tag product.image.url(:thumb) if product.image.exists? %>
+          </a>
         </span>
         <span class="cart-center">
           <%= link_to "#{product.name}", product_path(product), :class => "preview-name" %><br>
