@@ -77,9 +77,15 @@
 
 .review-post {
   float: left;
-  width: 70%;
+  width: 100%;
 }
 
 .post {
   margin-top: 0;
+}
+
+.review-post-column {
+  padding: 10px;
+  float: left;
+  width: 70%;
 }
