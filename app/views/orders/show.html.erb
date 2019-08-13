@@ -1,6 +1,50 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
-<%= @order.inspect %>
-<% @order.cart_items.each do |cart_item| %>
-  <%= cart_item %>
-<% end %>
+<h2>Order Confirmation</h2>
+<p>Ordered on <%= @order.created_at.strftime("%m-%d-%Y") %> | Order #<%= @order.id %></p>
+
+<h3>Order Details</h3>
+
+<div class="order-div">
+  <span class="order-left">
+    <h4>Shipping Address</h4>
+    <p>
+      <%= @order.shipping_information.first_name %> <%= @order.shipping_information.last_name %><br>
+      <%= @order.shipping_information.street_address %><br>
+      <%= @order.shipping_information.city %>, <%= @order.shipping_information.state %> <%= @order.shipping_information.zip_code %>
+    </p>
+  </span>
+  <span class="order-center">
+    <h4>Payment Method</h4>
+    <p>**** **** **** <%= @order.payment_information.last_four %></p>
+  </span>
+  <span class="order-right">
+    <h4>Order Summary</h4>
+    <p>
+      Item(s) Subtotal: <br>
+      Shipping: <br>
+      Grand Total:
+    </p>
+  </span>
+</div>
+
+<br>
+
+
+
+<div class="cart-container">
+  <% @order.products.each do |product| %>
+    <div class="cart-div">
+      <span class="cart-left">
+        <a href="/products/<%= product.id %>">
+          <%= image_tag product.image.url(:thumb) if product.image.exists? %>
+        </a>
+      </span>
+      <span class="cart-center">
+        <%= link_to "#{product.name}", product_path(product), :class => "preview-name" %><br>
+        Seller: <%= link_to "#{product.user.username}", user_path(product.user), :class => "seller-name" %><br><br>
+      </span>
+      <span class="cart-right">
+        <strong><%= number_to_currency(product.price, :unit => "$") %></strong>
+      </span>
+    </div>
+  <% end %>
+</div>

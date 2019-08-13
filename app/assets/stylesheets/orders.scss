@@ -7,3 +7,44 @@
   font-size: 20px;
   border-radius: 5px;
 }
+
+.order-div {
+  border-style: ridge;
+  // border-bottom-style: ridge;
+  // border-right-style: ridge;
+  // border-left-style: ridge;
+}
+
+.order-div:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.order-left {
+  float: left;
+  text-align: center;
+  width: 33%;
+  padding: 10px;
+  height: 125px;
+  background-color: #fff;
+}
+
+.order-center {
+  float: left;
+  text-align: center;
+  width: 33%;
+  padding: 10px;
+  height: 125px;
+  border-left-style: ridge;
+  border-right-style: ridge;
+}
+
+.order-right {
+  float: left;
+  text-align: center;
+  width: 34%;
+  padding: 10px;
+  height: 125px;
+  background-color: #fff;
+}

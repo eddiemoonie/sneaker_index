@@ -7,4 +7,12 @@ class Order < ApplicationRecord
 
   accepts_nested_attributes_for :shipping_information
   accepts_nested_attributes_for :payment_information
+
+  def subtotal
+    sum = 0
+    self.cart_items.each do |cart_item|
+      sum += cart_item.product.price
+    end
+    return sum
+  end
 end
