@@ -1,8 +1,8 @@
 <h2><%= @user.username %>'s Account</h2>
 
 <div class="header-container">
-  <h3 class="user-market-header">Market</h3>
-  <h3 class="user-review-header">Reviews</h3>
+  <h2 class="user-market-header">Market</h2>
+  <h2 class="user-review-header">Reviews</h2>
 </div>
 
 <div class="account-container">
@@ -14,7 +14,7 @@
             <div class="img">
               <a href="/products/<%= product.id %>">
                 <%= image_tag product.image.url(:preview) if product.image.exists? %>
-              </a>    
+              </a>
             </div>
           </div>
           <p><%= link_to "#{product.name}", product_path(product), :class => "preview-name" %></p>
@@ -28,6 +28,10 @@
           </div>
         </div>
       <% end %>
+    <% end %>
+
+    <% if @user.products.all? { |product| product.sold? } || !@user.products %>
+      <h3 class="empty-header"><%= @user.username %>'s Market is Empty</h3>
     <% end %>
   </div>
 
@@ -50,6 +54,10 @@
           </div>
         </div>
       <% end %>
+    <% end %>
+
+    <% if @user.products.all? { |product| !product.review } %>
+      <h3 class="empty-header">No Reviews Yet</h3>
     <% end %>
   </div>
 </div>
