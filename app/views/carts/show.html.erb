@@ -23,7 +23,7 @@
       <br>
       <span id="shipping">Shipping: </span><span id="shipping-price">$7.95</span>
       <br><br>
-      <span id="total">Total: </span><span id="total-price"></span>
+      <span id="total">Total: </span><span id="total-price"><%= number_to_currency(@cart.total, :unit => "$") %></span>
       <br>
       <div id="checkout-button-container">
         <button id="checkout-button"><%= link_to "Checkout", new_order_path, :id => "checkout" %></button>
