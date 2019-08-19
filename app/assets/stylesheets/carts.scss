@@ -65,7 +65,7 @@
   border-radius: 5px;
 }
 
-#subtotal {
+#subtotal, #shipping, #total {
   float: left;
 }
 
@@ -74,16 +74,19 @@
   color: #0080F0;
 }
 
-#subtotal-container{
-  font-size: 18px;
+#subtotal-container, #shipping-container, #total-container {
+
 }
 
-#price {
-  padding-left: 122px;
+#subtotal-price, #shipping-price, #total-price {
+  padding-top: 0px;
+  float: right;
+  text-align: right;
 }
 
 .subtotal-checkout {
   float: right;
   width: 34%;
   padding: 10px;
+  font-size: 18px;
 }
