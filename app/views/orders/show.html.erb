@@ -19,9 +19,9 @@
   <span class="order-right">
     <h4>Order Summary</h4>
     <p>
-      Item(s) Subtotal: <br>
-      Shipping: <br>
-      Grand Total:
+      <span class="order-labels">Item(s) Subtotal: </span><span class="order-price"><%= number_to_currency(@order.subtotal, :unit => "$") %></span><br>
+      <span class="order-labels">Shipping: </span ><span class="order-price">$7.95</span><br>
+      <span class="order-labels">Total: </span><span class="order-price"><%= number_to_currency(@order.total, :unit => "$") %></span>
     </p>
   </span>
 </div>

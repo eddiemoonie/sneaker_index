@@ -15,4 +15,8 @@ class Order < ApplicationRecord
     end
     return sum
   end
+
+  def total
+    self.subtotal + 7.95
+  end 
 end
