@@ -35,7 +35,7 @@
     <% end %>
   </div>
 
-
+  <!-- Fix review box -->
   <div class="review-column">
     <% @user.products.each do |product| %>
       <% if product.sold && product.review %>
@@ -45,11 +45,10 @@
           </div>
           <div class="review-post-column">
             <p class="post">
-              Rating: <%= @user.average_rating %>
-              <br>
-              "<%= product.review.post %>"
-              <br>
-              - <%= product.review.user.username %>
+              <%= product.review.user.username %><br>
+              Rating: <%= @user.average_rating %> <strong><%= product.name %></strong>
+              <br><br>
+              <%= product.review.post %>
             </p>
           </div>
         </div>
