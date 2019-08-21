@@ -45,10 +45,15 @@
           </div>
           <div class="review-post-column">
             <p class="post">
-              <%= product.review.user.username %><br>
-              Rating: <%= @user.average_rating %> <strong><%= product.name %></strong>
-              <br><br>
+              <div class="">
+                <div class="review-rating" data-score="<%= product.review.rating %>"></div>
+                <strong><%= product.name %></strong>
+              </div>
+              by <%= link_to "#{product.review.user.username}", user_path(product.review.user), :class => "seller-name" %>
+              <br></br>
               <%= product.review.post %>
+              <br></br>
+              <%= product.review.created_at.strftime("%m-%d-%Y") %>
             </p>
           </div>
         </div>
@@ -60,3 +65,13 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  $('.review-rating').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+</script>

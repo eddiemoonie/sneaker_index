@@ -44,8 +44,10 @@
 
     <div class="seller-info">
       <label for="">Seller: </label><%= link_to "#{@product.user.username}", user_path(@product.user), :id => "seller-name" %><br>
-      <label for="">Rating: </label><strong><%= @user.average_rating %></strong><br><br>
+      <div class="review-rating" data-score="<%= @user.average_rating %>"></div>
 
+      <br>
+      
       <h4>Seller Reviews</h4>
       <ul>
         <% @user.products.each do |product| %>
@@ -75,3 +77,13 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  $('.review-rating').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+</script>

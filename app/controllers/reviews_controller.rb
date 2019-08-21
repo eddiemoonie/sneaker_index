@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user = current_user
     if @review.save
-      redirect_to user_path(current_user)
+      redirect_to review_path(@review)
     else
       redirect_to new_review_path
     end
@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
 
   def update
     if @review.update(edit_review_params)
-      redirect_to user_path(current_user)
+      redirect_to review_path(@review)
     else
       render :edit
     end

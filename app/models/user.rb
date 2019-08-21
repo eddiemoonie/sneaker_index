@@ -28,7 +28,7 @@ class User < ApplicationRecord
     if count == 0
       return ""
     else
-      '%.1f' % (sum/count)
+      '%.1f' % (sum.to_f/count)
     end
   end
 end

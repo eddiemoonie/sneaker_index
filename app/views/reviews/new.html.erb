@@ -8,8 +8,10 @@
       </div>
     </div>
     <div class="review-column-right">
-      <p class="review-input">Seller: <span class="seller-name"><%= @product.user.username %></span></p>
-      <%= render 'form' %>
+      <div class="review-post">
+        <p class="review-input">Seller: <span class="seller-name"><%= @product.user.username %></span></p>
+        <%= render 'form' %>
+      </div>
     </div>
   </div>
 </div>

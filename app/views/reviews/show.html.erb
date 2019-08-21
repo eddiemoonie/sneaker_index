@@ -1,4 +1,5 @@
 <h1><%= @review.product.name %></h1>
+
 <div class="review-container">
   <div class="review">
     <div class="review-column-left">
@@ -10,8 +11,8 @@
     <div class="review-column-right">
       <div class="review-post">
         <p class="review-input">Seller: <span class="seller-name"><%= @review.seller.username %></span></p>
-        <div class="input-container">
-          <span class="review-input">Rating: <strong><%= @review.seller.average_rating %></strong></span>
+        <div class="review-rating" data-score="<%=@review.rating%>">
+
         </div>
         <div class="input-container">
           <span class="review-input"><%= @review.post %></span>
@@ -21,3 +22,13 @@
     </div>
   </div>
 </div>
+
+<script>
+  $('.review-rating').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+</script>
