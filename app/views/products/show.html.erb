@@ -44,7 +44,7 @@
 
     <div class="seller-info">
       <label for="">Seller: </label><%= link_to "#{@product.user.username}", user_path(@product.user), :class => "seller-name" %><br>
-      <div class="review-rating" data-score="<%= @user.average_rating %>"></div>
+      <span class="review-rating" data-score="<%= @user.average_rating %>"></span> <%= @user.average_rating %>
 
       <br>
 
