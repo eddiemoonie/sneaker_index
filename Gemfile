@@ -40,6 +40,8 @@ gem 'omniauth-facebook'
 
 gem 'paperclip', '~> 5.1'
 
+gem "nokogiri", ">= 1.10.4"
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
