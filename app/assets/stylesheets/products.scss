@@ -127,9 +127,28 @@ select#product_size, #product_condition {
 }
 
 .seller-info {
+  height: 415px;
   padding: 10px;
   border-style: ridge;
   text-align: center;
+}
+
+.product-review-column {
+  display: inline-block;
+  width: 100%;
+  height: 310px;
+  vertical-align: top;
+  overflow-y: scroll;
+  background-color: #fff;
+  text-align: left;
+  // border-style: ridge;
+}
+
+.product-review-containers {
+  display: inline-block;
+  width: 100%;
+  border-top-style: ridge;
+  border-bottom-style: ridge;
 }
 
 .buttons {

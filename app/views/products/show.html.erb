@@ -46,16 +46,37 @@
       <label for="">Seller: </label><%= link_to "#{@product.user.username}", user_path(@product.user), :class => "seller-name" %><br>
       <span class="review-rating" data-score="<%= @user.average_rating %>"></span> <%= @user.average_rating %>
 
-      <br>
+      <br></br>
 
       <h4>Seller Reviews</h4>
-      <ul>
+      <div class="product-review-column">
         <% @user.products.each do |product| %>
-          <% if product.review %>
-            <li>"<%= product.review.post %>" -<%= product.review.user.username %></li>
+          <% if product.sold && product.review %>
+            <div class="product-review-containers">
+              <div class="review-img-container">
+                <%= image_tag product.image.url(:thumb) if product.image.exists? %>
+              </div>
+              <div class="review-post-column">
+                <p class="post">
+                  <div class="">
+                    <div class="review-rating" data-score="<%= product.review.rating %>"></div>
+                    <strong><%= product.name %></strong>
+                  </div>
+                  by <%= link_to "#{product.review.user.username}", user_path(product.review.user), :class => "seller-name" %>
+                  <br></br>
+                  <%= product.review.post %>
+                  <br></br>
+                  <%= product.review.created_at.strftime("%m-%d-%Y") %>
+                </p>
+              </div>
+            </div>
           <% end %>
         <% end %>
-      </ul>
+
+        <% if @user.products.all? { |product| !product.review } %>
+          <h3 class="empty-header">No Reviews Yet</h3>
+        <% end %>
+      </div>
     </div>
 
     <% if !@product.sold && @product.user != current_user %>
