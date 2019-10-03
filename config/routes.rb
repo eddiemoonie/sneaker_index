@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root "products#index"
   get "/login", to: "sessions#new"
+  get "/auth/facebook/callback", to: "sessions#login"
   post "/sessions/create", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   resources :users, only: [:show, :update, :destroy]

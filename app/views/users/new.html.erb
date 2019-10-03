@@ -1,4 +1,16 @@
 <div class="login-div">
-  <h2>Create an Account</h2>
-  <%= render 'form' %>
+  <h1>Create an Account</h1>
+  <div class="new-account-container">
+    <div class="new-account-left">
+      <%= render 'form' %>
+    </div>
+
+    <div class="new-account-right">
+      <%= link_to '/auth/facebook' do %>
+        <button class="loginBtn loginBtn--facebook">
+          Continue with Facebook
+        </button>
+      <% end %>
+    </div>
+  </div>
 </div>

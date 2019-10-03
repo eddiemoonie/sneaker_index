@@ -1,5 +1,24 @@
 <div class="login-div">
-  <h2>Welcome!</h2>
+  <h1>Welcome!</h1>
   <h3>Sign in to <span id="small-title">sneaker#index</span> or <%= link_to "create an account", signup_path, :class => "blue" %></h3>
-  <%= render 'form' %>
+
+  <div class="new-account-container">
+    <div class="new-account-left" style="padding-left: 20%;">
+      <%= render 'form' %>
+    </div>
+
+    <div class="new-account-right" style="padding-top: 20px; padding-right: 20%;">
+      <%= link_to '/auth/facebook' do %>
+        <button class="loginBtn loginBtn--facebook" style="width: 300px;">
+          Login with Facebook
+        </button>
+      <% end %>
+
+      <br>
+
+      <button class="loginBtn loginBtn--google" style="width: 300px;">
+        Login with Google
+      </button>
+    </div>
+  </div>
 </div>

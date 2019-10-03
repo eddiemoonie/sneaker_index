@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_20_001103) do
+ActiveRecord::Schema.define(version: 2019_08_22_215034) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer "product_id"
@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(version: 2019_07_20_001103) do
     t.string "last_name"
     t.string "password_digest"
     t.string "password_confirmation"
+    t.integer "uid"
   end
 
 end
